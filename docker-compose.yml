@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  web:
+    image: php:8.2-apache
+    container_name: php-apache
+    volumes:
+      - ./app:/var/www/html
+    ports:
+      - "4444:80"   # Apache accessible on http://localhost:8080
+    depends_on:
+      - db
+    environment:
+      # Example PHP environment variables
+      APACHE_DOCUMENT_ROOT: /var/www/html
+
+  db:
+    image: postgres:15
+    container_name: postgres-db
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydatabase
+    ports:
+      - "5432:5432"  # PostgreSQL accessible on localhost:5432
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./db/init:/docker-entrypoint-initdb.d
+
+volumes:
+  db_data:
