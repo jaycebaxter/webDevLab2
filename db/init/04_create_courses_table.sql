@@ -6,13 +6,12 @@ INFT 2100
 */
 
 CREATE TABLE courses (
-    course_code varchar (9) PRIMARY KEY,
-    course_name varchar (255),
-    course_description text,
-)
+    course_code VARCHAR (9) PRIMARY KEY,
+    course_name VARCHAR (255) NOT NULL,
+    course_description TEXT
+);
 
--- chatgpt
-
+-- AI generated insert statements
 -- Semester 1
 INSERT INTO courses (course_code, course_name, course_description) VALUES
 ('COMM 1100', 'Communication Foundations', 'Foundations of communication in business and IT settings.'),
@@ -35,7 +34,6 @@ INSERT INTO courses (course_code, course_name, course_description) VALUES
 INSERT INTO courses (course_code, course_name, course_description) VALUES
 ('COMM 2109', 'IT Career Essentials', 'Essential skills for IT professionals, including career development.'),
 ('COSC 2100', 'Object-Oriented Programming 2', 'Advanced object-oriented programming concepts.'),
-('GNED 0000', 'General Education Elective', 'Elective course for general education requirements.'),
 ('INFT 2100', 'Web Development Intermediate', 'Intermediate web development concepts, including dynamic web applications.'),
 ('INFT 2101', 'Database Development 1', 'Database design, development, and management.'),
 ('MGMT 2107', 'Systems Development 2', 'Advanced topics in system analysis and development.');
@@ -43,7 +41,6 @@ INSERT INTO courses (course_code, course_name, course_description) VALUES
 -- Semester 4
 INSERT INTO courses (course_code, course_name, course_description) VALUES
 ('COSC 2200', 'Object-Oriented Programming 3', 'Advanced techniques in object-oriented programming.'),
-('GNED 0000', 'General Education Elective', 'Elective course for general education requirements.'),
 ('INFT 2200', 'Mainframe Development 1', 'Introduction to mainframe systems and their development.'),
 ('INFT 2201', 'Web Development - Enterprise', 'Enterprise-level web development, focusing on scalability and performance.'),
 ('INFT 2202', 'Web Development - Client Side Script', 'Client-side web development using JavaScript and related technologies.'),
