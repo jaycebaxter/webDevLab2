@@ -5,9 +5,9 @@ October 14th 2025
 INFT 2100
 */
 
-DROP TABLE if exists programs;
+DROP TABLE IF EXISTS programs;
 
 CREATE TABLE programs (
-    program_code CHAR (4) PRIMARY KEY,
-    program_name varchar (255) NOT NULL
+    program_code CHAR(4) PRIMARY KEY,
+    program_name VARCHAR(255) NOT NULL
 );

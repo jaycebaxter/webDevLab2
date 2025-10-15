@@ -5,11 +5,12 @@ October 14th 2025
 INFT 2100
 */
 
-DROP TABLE if exists marks;
+DROP TABLE IF EXISTS marks;
 
 CREATE TABLE marks (
-    student_id bigint references students(student_id) on delete cascade,
-    course_code varchar (9) references courses(course_code) on delete cascade,
-    final_mark int check (final_mark >= 0 and final_mark <=100),
-    achieved_at timestamp default current_timestamp
+    student_id BIGINT REFERENCES students(student_id) ON DELETE CASCADE,
+    course_code VARCHAR(9) REFERENCES courses(course_code) ON DELETE CASCADE,
+    final_mark INT CHECK (final_mark >= 0 AND final_mark <= 100),
+    achieved_at TIMESTAMP DEFAULT current_timestamp,
+    PRIMARY KEY (student_id, course_code)
 );
