@@ -27,8 +27,8 @@ INSERT INTO users (user_id, first_name, last_name, email, password, birth_date) 
 (100900000, 'Alice', 'Smith', 'alice.smith@example.com', 'hashed_password_1', '2000-02-15'),
 (100900001, 'Bob', 'Johnson', 'bob.johnson@example.com', 'hashed_password_2', '1999-07-30'),
 (100900002, 'Charlie', 'Lee', 'charlie.lee@example.com', 'hashed_password_3', '2001-05-22'),
-(100900003, 'Dana', 'Martinez', 'dana.martinez@example.com', '2000-11-10'),
-(100900004, 'Evan', 'Brown', 'evan.brown@example.com', '1998-09-05')
+(100900003, 'Dana', 'Martinez', 'dana.martinez@example.com', 'hashed_password_4', '2000-11-10'),
+(100900004, 'Evan', 'Brown', 'evan.brown@example.com', 'hashed_password_5', '1998-09-05')
 ON CONFLICT (email) DO NOTHING;
 
 -- Students
