@@ -1,16 +1,28 @@
--- dont lose this https://neon.com/postgresql/postgresql-tutorial/postgresql-date
--- https://www.tutorialspoint.com/postgresql/postgresql_using_autoincrement.htm
--- https://www.reddit.com/r/PostgreSQL/comments/mnj9gx/automatically_add_createdat_updatedadd_values_to/
--- https://stackoverflow.com/questions/9556474/automatically-populate-a-timestamp-field-in-postgresql-when-a-new-row-is-inserte
--- https://neon.com/postgresql/postgresql-tutorial/postgresql-unique-constraint
+/*
+Jayce Baxter-Johnson
+01_create_users_table.sql
+October 14th 2025
+INFT 2100
+*/
 
+-- Drops tables to recreate them so we don't get redundant data
+DROP TABLE if exists marks;
+DROP TABLE if exists courses;
+DROP TABLE if exists programs;
+DROP TABLE if exists students;
+DROP TABLE if exists users;
 
+-- Creates table and fields
 CREATE TABLE users (
-    user_id SERIAL PRIMARY KEY,
-    first_name varchar (255) NOT NULL,
-    last_name varchar (255) NOT NULL,
-    user_email varchar (255) NOT NULL UNIQUE,
-    birth_date date NOT NULL,
-    created_at date NOT NULL,
-    last_access timestamp default current_timestamp
-)
+    user_id BIGSERIAL PRIMARY KEY,
+    first_name VARCHAR (255) NOT NULL,
+    last_name VARCHAR (255) NOT NULL,
+    email VARCHAR (255) NOT NULL UNIQUE,
+    password VARCHAR (255) NOT NULL,
+    birth_date DATE NOT NULL,
+    created_at TIMESTAMP NOT NULL default current_timestamp,
+    last_access TIMESTAMP default current_timestamp
+);
+
+-- Sets the user_id to start at 100900000
+ALTER SEQUENCE users_user_id_seq RESTART WITH 100900000;
